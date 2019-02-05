@@ -9,9 +9,9 @@ plugins {
 
 dependencies {
 
-  
-  
-  implementation("org.camunda.bpm:camunda-engine:${Versions.camunda}")
+
+  api("org.camunda.commons:camunda-commons-typed-values:${Versions.typedValues}")
+
   compile(kotlin("stdlib-jdk8"))
 
 }
