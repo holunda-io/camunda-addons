@@ -1,6 +1,4 @@
 plugins {
-
-  // activate kotlin dsl for build.gradle for whole project
   `kotlin-dsl`
 }
 
