@@ -5,7 +5,8 @@ plugins {
   base
   idea
 
-  kotlin("jvm") version Versions.kotlin
+  kotlin("jvm") version Versions.kotlin apply false
+
 }
 
 
@@ -19,8 +20,8 @@ allprojects {
     mavenCentral()
     jcenter()
   }
-
 }
+
 
 dependencies {
   // Make the root project archives configuration depend on every sub-project
