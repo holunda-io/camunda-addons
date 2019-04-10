@@ -19,11 +19,7 @@ class VariableAdaptersTest {
   @Test
   fun `adapter for runtimeService`() {
     val variables = Variables.createVariables()
-    val runtimeService = spy(RuntimeService::class.java)
-
-    Mockito.`when`(runtimeService.getVariable(eq(instanceId), anyString())).thenAnswer { i -> variables[i.getArgument(1)] }
-    Mockito.`when`(runtimeService.setVariable(eq(instanceId), anyString(), any())).thenAnswer { i -> variables.putValue(i.getArgument(1), i.getArgument(2)) }
-
+    val runtimeService = RuntimeServiceFake(variables)
     val adapter = runtimeService.readWriteAdapter(instanceId)
 
     assertThat(adapter.read(stringVar)).isEmpty
