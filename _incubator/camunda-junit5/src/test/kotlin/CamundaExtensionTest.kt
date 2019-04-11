@@ -6,12 +6,13 @@ import org.camunda.bpm.engine.test.Deployment
 import org.camunda.bpm.engine.test.mock.MockExpressionManager
 import org.junit.jupiter.api.extension.RegisterExtension
 import org.camunda.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl.DB_SCHEMA_UPDATE_DROP_CREATE
+import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertAll
 import org.junit.jupiter.api.extension.ExtendWith
 
 
-
+@Disabled
 @ExtendWith(CamundaExtension::class)
 @Deployment(resources = ["dummy.bpmn"])
 class CamundaExtensionTest {
