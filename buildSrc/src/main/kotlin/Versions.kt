@@ -4,7 +4,7 @@ object Versions {
   val kotlin = embeddedKotlinVersion
 
   const val camunda = "7.10.0"
-  const val camundaEE = "7.10.4-ee"
+  const val camundaEE = "7.10.5-ee"
 
   const val junit5 = "5.4.1"
 
