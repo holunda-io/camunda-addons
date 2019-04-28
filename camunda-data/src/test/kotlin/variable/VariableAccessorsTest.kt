@@ -14,11 +14,11 @@ class VariableAccessorsTest {
     val variables = Variables.createVariables()
     val runtimeService = RuntimeServiceFake(variables)
 
-    val adapter = enumVariable.adapter(runtimeService, "1")
+    val accessor = enumVariable.adapter(runtimeService, "1")
 
-    adapter.write(DummyEnum.WORLD)
+    accessor.write(DummyEnum.WORLD)
 
-    assertThat(adapter.readRequired()).isEqualTo(DummyEnum.WORLD)
+    assertThat(accessor.readRequired()).isEqualTo(DummyEnum.WORLD)
 
   }
 }
