@@ -32,7 +32,22 @@ class CamundaDataAddonTest {
         assertThatThrownBy { reader.readRequired(BAR) }.isInstanceOf(VariableNotFoundException::class.java)
     }
 
-    class MyVariableReader(val store: MutableMap<String, Any>) : VariableReader {
+    @Test
+    fun `implement writer interface`() {
+        val writer = MyVariableReader(mutableMapOf())
+
+        writer.write(FOO, "world")
+
+        assertThat(writer.readRequired(FOO)).isEqualTo("world")
+    }
+
+    class MyVariableReader(val store: MutableMap<String, Any>) : VariableReader, VariableWriter {
         override fun <T : Any> read(variable: Variable<T>): Optional<T> = Optional.ofNullable(store[variable.key] as T?);
+
+        override fun <T : Any> write(variable: Variable<T>, value: T): MyVariableReader {
+            store.put(variable.key, value)
+            return this
+        }
+
     }
 }
