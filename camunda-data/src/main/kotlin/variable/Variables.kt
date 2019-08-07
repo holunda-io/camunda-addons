@@ -1,7 +1,6 @@
-package io.holunda.camunda.addons.data.variable
+package io.holunda.addons.camunda.data.variable
 
 import java.util.function.Function
-import kotlin.reflect.KClass
 
 fun stringVariable(key: String) = typedVariable(key, String::class.java)
 fun stringVariable(variableKey: VariableKey) = stringVariable(variableKey.key)

@@ -1,5 +1,6 @@
-package io.holunda.camunda.addons.data.variable
+package io.holunda.addons.camunda.data.variable
 
+import io.holunda.addons.camunda.data.variable.readWriteAdapter
 import org.camunda.bpm.engine.CaseService
 import org.camunda.bpm.engine.RuntimeService
 import org.camunda.bpm.engine.delegate.VariableScope

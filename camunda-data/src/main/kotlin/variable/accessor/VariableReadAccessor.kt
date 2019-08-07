@@ -1,16 +1,16 @@
-package io.holunda.camunda.addons.data.variable.accessor
+package io.holunda.addons.camunda.data.variable.accessor
 
-import io.holunda.camunda.addons.data.variable.Variable
-import io.holunda.camunda.addons.data.variable.adapter.VariableReadAdapter
-import io.holunda.camunda.addons.data.variable.exception.variableNotFound
+import io.holunda.addons.camunda.data.variable.Variable
+import io.holunda.addons.camunda.data.variable.adapter.VariableReadAdapter
+import io.holunda.addons.camunda.data.variable.exception.variableNotFound
 import java.util.*
 
 /**
  * Read typed value of given Variable using VariableReadAdapter.
  */
 open class VariableReadAccessor<T>(
-    open val variable: Variable<T>,
-    open val adapter : VariableReadAdapter
+        open val variable: Variable<T>,
+        open val adapter : VariableReadAdapter
 ) {
 
   fun read() : Optional<T> = adapter.read(variable)
