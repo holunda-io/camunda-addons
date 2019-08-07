@@ -1,7 +1,7 @@
-package io.holunda.camunda.addons.data.variable
+package io.holunda.addons.camunda.data.variable
 
-import io.holunda.camunda.addons.data.variable.adapter.VariableReadAdapter
-import io.holunda.camunda.addons.data.variable.adapter.VariableReadWriteAdapter
+import io.holunda.addons.camunda.data.variable.adapter.VariableReadAdapter
+import io.holunda.addons.camunda.data.variable.adapter.VariableReadWriteAdapter
 import org.camunda.bpm.engine.CaseService
 import org.camunda.bpm.engine.RuntimeService
 import org.camunda.bpm.engine.delegate.VariableScope
@@ -20,7 +20,7 @@ fun RuntimeService.readWriteAdapter(processInstanceId: String): VariableReadWrit
 fun Map<String, Any>.readAdapter() = object : VariableReadAdapter {
   override fun <T> read(variable: Variable<T>): Optional<T> = read(variable) { this@readAdapter[variable.key] }
 }
-fun MutableMap<String, Any>.readWriteAdapter() = object : VariableReadWriteAdapter{
+fun MutableMap<String, Any>.readWriteAdapter() = object : VariableReadWriteAdapter {
   override fun <T> write(variable: Variable<T>, value: T): T = write(variable, value) { v -> this@readWriteAdapter[variable.key] = v }.let { value }
   override fun <T> read(variable: Variable<T>): Optional<T> = this@readWriteAdapter.readAdapter().read(variable)
 }
@@ -28,14 +28,14 @@ fun MutableMap<String, Any>.readWriteAdapter() = object : VariableReadWriteAdapt
 fun VariableScope.readAdapter() = object : VariableReadAdapter {
   override fun <T> read(variable: Variable<T>): Optional<T> = read(variable) { this@readAdapter.getVariable(variable.key) }
 }
-fun VariableScope.readWriteAdapter() = object :VariableReadWriteAdapter {
-  override fun <T> write(variable: Variable<T>, value: T): T = write(variable, value) { v-> this@readWriteAdapter.setVariable(variable.key, v) }.let { value }
+fun VariableScope.readWriteAdapter() = object : VariableReadWriteAdapter {
+  override fun <T> write(variable: Variable<T>, value: T): T = write(variable, value) { v -> this@readWriteAdapter.setVariable(variable.key, v) }.let { value }
   override fun <T> read(variable: Variable<T>): Optional<T> = this@readWriteAdapter.readAdapter().read(variable)
 }
 
 
 fun CaseService.readAdapter(caseInstanceId: String): VariableReadAdapter = object : VariableReadAdapter {
-  override fun <T> read(variable: Variable<T>): Optional<T> = read(variable) { this@readAdapter.getVariable(caseInstanceId, variable.key)}
+  override fun <T> read(variable: Variable<T>): Optional<T> = read(variable) { this@readAdapter.getVariable(caseInstanceId, variable.key) }
 }
 fun CaseService.readWriteAdapter(caseInstanceId: String): VariableReadAdapter = object : VariableReadWriteAdapter {
   override fun <T> read(variable: Variable<T>): Optional<T> = this@readWriteAdapter.readAdapter(caseInstanceId).read(variable)

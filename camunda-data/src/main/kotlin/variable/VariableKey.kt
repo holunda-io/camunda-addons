@@ -1,4 +1,4 @@
-package io.holunda.camunda.addons.data.variable
+package io.holunda.addons.camunda.data.variable
 
 /**
  * A variable is identified by its key.

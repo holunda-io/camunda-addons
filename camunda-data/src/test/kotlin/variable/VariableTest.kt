@@ -1,5 +1,9 @@
 package io.holunda.camunda.addons.data.variable
 
+import io.holunda.addons.camunda.data.variable.enumVariable
+import io.holunda.addons.camunda.data.variable.longVariable
+import io.holunda.addons.camunda.data.variable.readAdapter
+import io.holunda.addons.camunda.data.variable.readWriteAdapter
 import org.assertj.core.api.Assertions.assertThat
 import org.camunda.bpm.engine.variable.Variables
 import org.junit.Test

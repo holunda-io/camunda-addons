@@ -1,9 +1,9 @@
 package io.holunda.camunda.addons.examples;
 
-import io.holunda.camunda.addons.data.variable.Variable;
-import io.holunda.camunda.addons.data.variable.VariableAdaptersKt;
-import io.holunda.camunda.addons.data.variable.VariablesKt;
-import io.holunda.camunda.addons.data.variable.adapter.VariableReadWriteAdapter;
+import io.holunda.addons.camunda.data.variable.Variable;
+import io.holunda.addons.camunda.data.variable.VariableAdaptersKt;
+import io.holunda.addons.camunda.data.variable.VariablesKt;
+import io.holunda.addons.camunda.data.variable.adapter.VariableReadWriteAdapter;
 import org.camunda.bpm.engine.RuntimeService;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 import org.camunda.bpm.engine.repository.Deployment;
@@ -15,8 +15,6 @@ import org.camunda.bpm.model.bpmn.BpmnModelInstance;
 import org.camunda.bpm.spring.boot.starter.event.PostDeployEvent;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
-
-import java.util.UUID;
 
 @Component
 public class DummyProcess {

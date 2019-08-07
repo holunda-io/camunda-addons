@@ -1,6 +1,6 @@
-package io.holunda.camunda.addons.data.variable.adapter
+package io.holunda.addons.camunda.data.variable.adapter
 
-import io.holunda.camunda.addons.data.variable.Variable
+import io.holunda.addons.camunda.data.variable.Variable
 
 /**
  * Allows read and write access to given variable

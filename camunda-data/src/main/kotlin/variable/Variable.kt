@@ -1,9 +1,9 @@
-package io.holunda.camunda.addons.data.variable
+package io.holunda.addons.camunda.data.variable
 
-import io.holunda.camunda.addons.data.variable.accessor.VariableReadAccessor
-import io.holunda.camunda.addons.data.variable.accessor.VariableReadWriteAccessor
-import io.holunda.camunda.addons.data.variable.adapter.VariableReadAdapter
-import io.holunda.camunda.addons.data.variable.adapter.VariableReadWriteAdapter
+import io.holunda.addons.camunda.data.variable.accessor.VariableReadAccessor
+import io.holunda.addons.camunda.data.variable.accessor.VariableReadWriteAccessor
+import io.holunda.addons.camunda.data.variable.adapter.VariableReadAdapter
+import io.holunda.addons.camunda.data.variable.adapter.VariableReadWriteAdapter
 import java.util.function.Function
 
 /**

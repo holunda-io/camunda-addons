@@ -12,7 +12,7 @@ object Versions {
 
   const val junit5 = "5.4.1"
 
-  const val typedValues = "1.6.1"
+  const val typedValues = "1.7.1"
 }
 
 object Gav {

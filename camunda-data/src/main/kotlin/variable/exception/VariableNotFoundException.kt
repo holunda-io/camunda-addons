@@ -1,6 +1,6 @@
-package io.holunda.camunda.addons.data.variable.exception
+package io.holunda.addons.camunda.data.variable.exception
 
-import io.holunda.camunda.addons.data.variable.Variable
+import io.holunda.addons.camunda.data.variable.Variable
 import java.util.function.Supplier
 
 /**

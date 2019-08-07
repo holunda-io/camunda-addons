@@ -1,18 +1,15 @@
-import Versions
-
 
 plugins {
   base
   idea
 
   kotlin("jvm") version Versions.kotlin apply false
-
 }
 
 
 // set gav for project and repos
 allprojects {
-  group = "io.holunda.camunda.addons"
+  group = "io.holunda.addons.camunda"
   version = "0.0.1-SNAPSHOT"
 
   repositories {

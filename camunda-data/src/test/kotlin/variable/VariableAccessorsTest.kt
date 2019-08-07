@@ -1,5 +1,7 @@
 package io.holunda.camunda.addons.data.variable
 
+import io.holunda.addons.camunda.data.variable.adapter
+import io.holunda.addons.camunda.data.variable.enumVariable
 import org.assertj.core.api.Assertions.*
 import org.camunda.bpm.engine.variable.Variables
 import org.junit.Test
